@@ -28,7 +28,7 @@ const projects = [
     role: "Full-stack developer",
     tags: ["Next.js", "React", "Stripe", "Sanity CMS"],
     githubUrl: "https://github.com/iamasmigupta/Gadget_Website",
-    liveUrl: "https://ecommerce-website-ddx155r56-asmi-guptas-projects.vercel.app/",
+    liveUrl: "https://gadgetmasteryhub.vercel.app/",
     image: "/projects/gadget.png",
   },
   {
