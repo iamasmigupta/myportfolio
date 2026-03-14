@@ -2,7 +2,7 @@
 
 A modern, responsive personal portfolio built with **React**, **Vite**, and **Tailwind CSS v4** featuring dark/light mode, glassmorphism UI, and smooth animations.
 
-![Portfolio Preview](public/projects/worksphere.png)
+![Portfolio Preview](public/preview.png)
 
 ## 🚀 Live Demo
 
