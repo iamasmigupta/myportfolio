@@ -6,7 +6,7 @@ A modern, responsive personal portfolio built with **React**, **Vite**, and **Ta
 
 ## 🚀 Live Demo
 
-🔗 [View Portfolio](https://myportfolio-asmi.vercel.app)
+🔗 [View Portfolio](https://asmigupta.vercel.app)
 
 ## 🛠️ Tech Stack
 
