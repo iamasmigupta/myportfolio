@@ -91,7 +91,7 @@ export const HeroSection = () => {
             Driven by curiosity, I transform ideas into seamless, impactful apps.
           </p>
 
-          <div className="flex flex-wrap justify-center md:justify-start gap-2.5 sm:gap-3 pt-1">
+          <div className="flex flex-wrap justify-start gap-2.5 sm:gap-3 pt-1">
             <a href="#" className="cosmic-button flex items-center gap-2 text-xs sm:text-sm" target="_blank" rel="noopener noreferrer">
               <FileText className="w-3.5 h-3.5 sm:w-4 sm:h-4" /> Resume
             </a>
@@ -101,7 +101,7 @@ export const HeroSection = () => {
           </div>
 
           {/* Social links */}
-          <div className="flex justify-center md:justify-start gap-3 pt-1">
+          <div className="flex justify-start gap-3 pt-1">
             {socialLinks.map((social, index) => (
               <a
                 key={index}
