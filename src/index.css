@@ -1,0 +1,176 @@
+@import "tailwindcss";
+
+@theme {
+  --color-border: hsl(var(--border));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-card: hsl(var(--card));
+  --color-section: hsl(var(--section));
+  --color-muted: hsl(var(--muted));
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-subtle: pulse-subtle 4s ease-in-out infinite;
+  --animate-fade-in: fade-in 0.7s ease-out forwards;
+  --animate-fade-in-delay-1: fade-in 0.7s ease-out 0.2s forwards;
+  --animate-fade-in-delay-2: fade-in 0.7s ease-out 0.4s forwards;
+  --animate-fade-in-delay-3: fade-in 0.7s ease-out 0.6s forwards;
+  --animate-fade-in-delay-4: fade-in 0.7s ease-out 0.8s forwards;
+  --animate-meteor: meteor 5s linear infinite;
+  --animate-slide-up: slide-up 0.6s ease-out forwards;
+  --animate-glow: glow 3s ease-in-out infinite;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  @keyframes pulse-subtle {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+  }
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes slide-up {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes meteor {
+    0% { transform: rotate(215deg) translateX(0); opacity: 1; }
+    70% { opacity: 1; }
+    100% { transform: rotate(215deg) translateX(-500px); opacity: 0; }
+  }
+  @keyframes glow {
+    0%, 100% { box-shadow: 0 0 5px rgba(139, 92, 246, 0.3); }
+    50% { box-shadow: 0 0 20px rgba(139, 92, 246, 0.6), 0 0 40px rgba(139, 92, 246, 0.2); }
+  }
+}
+
+@layer base {
+  :root {
+    --background: 230 25% 97%;
+    --foreground: 222 47% 11%;
+    --card: 230 20% 93%;
+    --section: 230 22% 95%;
+    --primary: 252 60% 58%;
+    --primary-foreground: 210 40% 98%;
+    --border: 230 18% 87%;
+    --muted: 230 15% 75%;
+  }
+
+  .dark {
+    --background: 224 50% 7%;
+    --foreground: 213 31% 91%;
+    --card: 224 45% 12%;
+    --section: 224 45% 9%;
+    --primary: 252 65% 65%;
+    --primary-foreground: 213 31% 91%;
+    --border: 224 30% 20%;
+    --muted: 224 20% 40%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+    font-family: 'DM Sans', 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: -0.005em;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'DM Sans', 'Inter', system-ui, sans-serif;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+  }
+
+  ::selection {
+    background: hsl(252 65% 65% / 0.3);
+    color: hsl(var(--foreground));
+  }
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+  @media (width >= 640px) { max-width: 640px; }
+  @media (width >= 768px) { max-width: 768px; }
+  @media (width >= 1024px) { max-width: 1024px; }
+  @media (width >= 1280px) { max-width: 1280px; }
+}
+
+@utility glass-section {
+  @apply rounded-2xl border border-border/40;
+  background: hsl(var(--section) / 0.65);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+@utility gradient-text {
+  @apply bg-clip-text text-transparent font-bold italic;
+  background-image: linear-gradient(135deg, hsl(252 65% 60%), hsl(280 65% 55%), hsl(230 70% 60%));
+}
+
+@utility text-glow {
+  @apply relative;
+  text-shadow: 0 0 10px rgba(167, 139, 250, 0.5);
+}
+
+@utility card-hover {
+  @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:border-primary/30;
+}
+
+@utility cosmic-button {
+  @apply px-7 py-3 rounded-full bg-primary text-primary-foreground font-semibold text-sm
+         transition-all duration-300 hover:shadow-[0_0_20px_rgba(139,92,246,0.5)]
+         hover:scale-105 active:scale-95;
+  background-image: linear-gradient(135deg, hsl(252 60% 55%), hsl(270 60% 55%));
+}
+
+@utility outline-button {
+  @apply px-7 py-3 rounded-full border-2 border-primary/60 text-primary font-semibold text-sm
+         hover:bg-primary/10 hover:border-primary transition-all duration-300;
+}
+
+@utility star {
+  @apply absolute rounded-full bg-white;
+  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.4);
+}
+
+@utility meteor {
+  @apply absolute bg-linear-to-r from-white via-white to-transparent rounded-full;
+  box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.3);
+}
+
+@utility skill-card {
+  @apply flex flex-col items-center justify-center gap-3 p-6 rounded-xl bg-card border border-border/60
+         transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:scale-105;
+  backdrop-filter: blur(8px);
+}
+
+@utility section-heading {
+  @apply text-3xl md:text-4xl gradient-text mb-2;
+  font-family: 'DM Sans', system-ui, sans-serif;
+}
+
+@utility section-subtext {
+  @apply text-foreground/50 mb-10 max-w-2xl mx-auto text-sm md:text-base leading-relaxed;
+}
+
+#root {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}
