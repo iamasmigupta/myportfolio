@@ -92,7 +92,7 @@ export const HeroSection = () => {
           </p>
 
           <div className="flex flex-wrap justify-start gap-2.5 sm:gap-3 pt-1">
-            <a href="#" className="cosmic-button flex items-center gap-2 text-xs sm:text-sm" target="_blank" rel="noopener noreferrer">
+            <a href="https://drive.google.com/file/d/1KhyhFLLTfGJyEWNp3dzuzczCXDGUn-TK/view?usp=sharing" className="cosmic-button flex items-center gap-2 text-xs sm:text-sm" target="_blank" rel="noopener noreferrer">
               <FileText className="w-3.5 h-3.5 sm:w-4 sm:h-4" /> Resume
             </a>
             <a href="#projects" className="outline-button text-xs sm:text-sm">
